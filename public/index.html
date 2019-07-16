@@ -1,0 +1,29 @@
+<html>
+
+<head>
+  <title>Paint Interactive</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css"/>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/nipplejs@0.8.2/dist/nipplejs.min.js"></script>
+</head>
+
+<body>
+  <div class="zone">
+    <div class="zone_colour">
+      <h1 class="title">Welcome to Paint Interactive</h1>
+      <div class="zone_pickr"></div>
+      <button class="new_pickr" onclick="addPickr()"></button>
+      <button class="close_pickr" onclick="removePickr()"></button>
+    </div>
+    <div id="zone_joystick"></div>
+  </div>
+
+
+  <!-- Scripts -->
+  <script type="text/javascript" src="js/client.js"></script>
+</body>
+
+</html>
