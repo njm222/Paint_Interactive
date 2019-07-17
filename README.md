@@ -25,6 +25,8 @@ Local machine
 
 * [npm](https://github.com/npm/cli)
 
+* [express.js](https://expressjs.com/)
+
 * [nipplejs](https://github.com/yoannmoinet/nipplejs)
 
 * [pickr](https://github.com/Simonwep/pickr)
