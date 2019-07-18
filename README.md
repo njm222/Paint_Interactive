@@ -27,6 +27,8 @@ Local machine
 
 * [express.js](https://expressjs.com/)
 
+* [socket.io](https://socket.io/)
+
 * [nipplejs](https://github.com/yoannmoinet/nipplejs)
 
 * [pickr](https://github.com/Simonwep/pickr)
