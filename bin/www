@@ -101,6 +101,8 @@ const fs = require('fs');
 let socket = require('socket.io');
 let io = socket(server);
 let userDataObj = {};
+let userMap = new Map();
+let blobStack = [5, 4, 3, 2, 1, 0];
 
 
 io.sockets.on('connection', newConnection);
@@ -108,8 +110,15 @@ io.sockets.on('connection', newConnection);
 function newConnection(socket) {
 
   console.log("New connection " + socket.id);
+  // add to map
+  if(blobStack.length > 0)
+    userMap.set(socket.id, blobStack.pop());
+  else {
+    userMap.set(socket.id, -1); //not long term solution (send client 'server full' msg)
+  }
   //Initialize userDataObj structure
   userDataObj[socket.id] = {
+    blob: userMap.get(socket.id),
     x: 0.0,
     y: 0.0,
     f: 0.0,
@@ -119,7 +128,12 @@ function newConnection(socket) {
       0: '#FFF'
     }
   };
-  //userMap.set(socket.id, [0, 0, 0, 0]);
+  userDataObj[-1] = {
+    blob: -1,
+    remaining: blobStack
+  };
+
+  fs.writeFileSync('test.json', JSON.stringify(userDataObj));
 
   socket.on('addedPickr', (data) => {
     userDataObj[socket.id].colourLength = data[0];
@@ -159,7 +173,15 @@ function newConnection(socket) {
 
   socket.on('disconnecting', (reason) => {
     console.log("User " + socket.id + " disconnecting: " + reason);
-    //userMap.delete(socket.id);
+
+    //not long-term solution
+    if (userMap.get(socket.id) !== -1) {
+      blobStack.push(userMap.get(socket.id));
+    }
+
+    userMap.delete(socket.id);
+
+    userDataObj[-1].remaining = blobStack;
     delete userDataObj[socket.id];
   });
   socket.on('disconnect', (reason) => {
