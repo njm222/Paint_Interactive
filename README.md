@@ -23,11 +23,13 @@ Local machine
 
 * [node.js](https://nodejs.org) 
 
+* [json](https://www.json.org)
+
 * [npm](https://github.com/npm/cli)
 
-* [express.js](https://expressjs.com/)
+* [express.js](https://expressjs.com)
 
-* [socket.io](https://socket.io/)
+* [socket.io](https://socket.io)
 
 * [nipplejs](https://github.com/yoannmoinet/nipplejs)
 
