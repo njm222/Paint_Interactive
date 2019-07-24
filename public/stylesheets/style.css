@@ -8,8 +8,14 @@ a {
   color: #00B7FF;
 }
 
+.zone {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
 .title {
-  padding: 10px;
+  font-size: 3em;
   color: #FFF;
 }
 
@@ -17,7 +23,12 @@ a {
   position: relative;
   text-align: center;
   background: #282828;
-  height: 10%;
+  flex: 0 1 auto;
+}
+
+.zone_colour_inner {
+  display: inline-flex;
+  padding: 2em;
 }
 
 .zone_pickr {
@@ -25,21 +36,46 @@ a {
 }
 
 .pickr {
-  padding: 5px;
+  padding: 1.5vw;
+}
+
+.pickr .pcr-button {
+  max-width: 100px;
+  max-height: 100px;
+  height: 10vw;
+  width: 10vw;
 }
 
 .new_pickr {
+  padding: 1.5vw;
+}
+
+.new-pcr-button {
   border: none;
   background: url("../images/add.svg") no-repeat;
-  width: 2em;
-  height: 2em;
-  padding: 5px;
+  max-width: 100px;
+  max-height: 100px;
+  height: 10vw;
+  width: 10vw;
+  padding: .5em;
+  margin: 1.5vw;
+}
+
+.close-pcr-button {
+  border: none;
+  background: url("../images/sub.svg") no-repeat;
+  max-width: 100px;
+  max-height: 100px;
+  height: 10vw;
+  width: 10vw;
+  padding: .5em;
+  margin: 1.5vw;
 }
 
 #zone_joystick {
   position: relative;
   background: #000;
-  height: 90%;
+  flex: 1 1 auto;
 }
 
 
