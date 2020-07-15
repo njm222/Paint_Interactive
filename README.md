@@ -1,6 +1,6 @@
 # Paint Interactive
 
-The server-client side of an interactive installation piece.
+A simple node.js server for an interactive installation piece.
 
 
 ## Getting Started
