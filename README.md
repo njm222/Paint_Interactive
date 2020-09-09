@@ -2,6 +2,8 @@
 
 A simple node.js server for an interactive installation piece.
 
+## Demo
+![Paint Interactive Demo](demo/interactive-paint-demo.gif)
 
 ## Getting Started
 
